@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6b13457fb5c5dda41b719616ddaf4b40
   m_SerializeEntries:
-  - m_GUID: 0ae450ba7a7240144a699bbce0976ce6
-    m_Address: HotFixDll
+  - m_GUID: a96eba2e44410044ead39dac258a56ca
+    m_Address: Assets/StreamingAssets
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

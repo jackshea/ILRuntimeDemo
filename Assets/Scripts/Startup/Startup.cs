@@ -1,58 +1,33 @@
-﻿using ILRuntime.Runtime.Enviorment;
-using System.Collections;
+﻿using System;
 using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using AppDomain = ILRuntime.Runtime.Enviorment.AppDomain;
 
 public class Startup : MonoBehaviour
 {
     AppDomain appdomain;
-    System.IO.MemoryStream fs;
-    System.IO.MemoryStream p;
+    MemoryStream fs;
+    MemoryStream p;
 
     void Start()
     {
-        StartCoroutine(LoadHotFixAssembly());
+        LoadHotFixAssembly();
     }
 
-    IEnumerator LoadHotFixAssembly()
+    private async void LoadHotFixAssembly()
     {
         appdomain = new AppDomain();
-
-#if UNITY_ANDROID
-        WWW www = new WWW(Application.streamingAssetsPath + "/HotFix_Project.dll");
-#else
-        WWW www = new WWW("file:///" + Application.streamingAssetsPath + "/HotFix_Project.dll");
-#endif
-        while (!www.isDone)
-            yield return null;
-        if (!string.IsNullOrEmpty(www.error))
-            UnityEngine.Debug.LogError(www.error);
-        byte[] dll = www.bytes;
-        www.Dispose();
-
-        //PDB文件是调试数据库，如需要在日志中显示报错的行号，则必须提供PDB文件，不过由于会额外耗用内存，正式发布时请将PDB去掉，下面LoadAssembly的时候pdb传null即可
-#if UNITY_ANDROID
-        www = new WWW(Application.streamingAssetsPath + "/HotFix_Project.pdb");
-#else
-        www = new WWW("file:///" + Application.streamingAssetsPath + "/HotFix_Project.pdb");
-#endif
-        while (!www.isDone)
-            yield return null;
-        if (!string.IsNullOrEmpty(www.error))
-            UnityEngine.Debug.LogError(www.error);
-        byte[] pdb = www.bytes;
-        fs = new MemoryStream(dll);
-        p = new MemoryStream(pdb);
-        //fs=ReadFileFromAA()
+        fs = await ReadFileFromAA("HotFixDlls/HotFixProject.dll.bytes");
+        p = await ReadFileFromAA("HotFixDlls/HotFixProject.pdb.bytes");
         try
         {
             appdomain.LoadAssembly(fs, p, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
         }
-        catch
+        catch (Exception ex)
         {
-            Debug.LogError("加载热更DLL失败，请确保已经通过VS打开Assets/Samples/ILRuntime/1.6/Demo/HotFix_Project/HotFix_Project.sln编译过热更DLL");
+            Debug.LogError("加载热更DLL失败. ex = " + ex.ToString());
         }
 
         InitializeILRuntime();
@@ -71,8 +46,8 @@ public class Startup : MonoBehaviour
     void OnHotFixLoaded()
     {
         //HelloWorld，第一次方法调用
-        appdomain.Invoke("HotFix_Project.InstanceClass", "StaticFunTest", null, null);
-
+        appdomain.Invoke("HotFixProject.Startup", "Hello", null, null);
+        //appdomain.Invoke("HotFix_Project.InstanceClass", "StaticFunTest", null, null);
     }
 
     private async Task<MemoryStream> ReadFileFromAA(string key)

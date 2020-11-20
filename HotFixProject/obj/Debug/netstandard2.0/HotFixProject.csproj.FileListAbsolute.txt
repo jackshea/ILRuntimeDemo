@@ -18,3 +18,4 @@ D:\GitHub\ILRuntimeDemo\HotFixProject\bin\Debug\netstandard2.0\HotFixProject.dll
 D:\GitHub\ILRuntimeDemo\HotFixProject\bin\Debug\netstandard2.0\HotFixProject.pdb
 D:\GitHub\ILRuntimeDemo\HotFixProject\bin\Debug\netstandard2.0\UnityEngine.CoreModule.dll
 D:\GitHub\ILRuntimeDemo\HotFixProject\bin\Debug\netstandard2.0\UnityEngine.UIModule.dll
+D:\GitHub\ILRuntimeDemo\HotFixProject\obj\Debug\netstandard2.0\HotFixProject.csprojAssemblyReference.cache
