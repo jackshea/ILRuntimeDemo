@@ -1,0 +1,6 @@
+D:\GitHub\ILRuntimeDemo\Assets\StreamingAssets\HotFix_Project.dll
+D:\GitHub\ILRuntimeDemo\Assets\StreamingAssets\HotFix_Project.pdb
+D:\GitHub\ILRuntimeDemo\Assets\Samples\ILRuntime\1.6.5\Demo\HotFix_Project~\obj\Debug\HotFix_Project.csprojAssemblyReference.cache
+D:\GitHub\ILRuntimeDemo\Assets\Samples\ILRuntime\1.6.5\Demo\HotFix_Project~\obj\Debug\HotFix_Project.csproj.CoreCompileInputs.cache
+D:\GitHub\ILRuntimeDemo\Assets\Samples\ILRuntime\1.6.5\Demo\HotFix_Project~\obj\Debug\HotFix_Project.dll
+D:\GitHub\ILRuntimeDemo\Assets\Samples\ILRuntime\1.6.5\Demo\HotFix_Project~\obj\Debug\HotFix_Project.pdb
