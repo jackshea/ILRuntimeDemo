@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UKhp2Z4amxxmCQIiMMeR66n6lbqLga5xOEvhp+HdoximiVFHM2wNP0PNsczsoff5ZSSI/0wPYCp31z0HVKeVaQ==",
+  "success": true,
+  "projectFilePath": "D:\\GitHub\\ILRuntimeDemo\\HotFixProject\\HotFixProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\XieZK\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\XieZK\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
