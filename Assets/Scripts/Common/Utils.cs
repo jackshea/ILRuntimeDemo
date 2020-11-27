@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Ujoy19.Common
+namespace Common
 {
     public class Utils
     {

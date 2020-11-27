@@ -5,7 +5,7 @@ using Common;
 using Logger;
 using UnityEngine;
 
-namespace Ujoy19.Common
+namespace Common
 {
     /// 窗口管理器
     /// 用于打开关闭窗口

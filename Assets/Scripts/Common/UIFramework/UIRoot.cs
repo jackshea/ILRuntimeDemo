@@ -1,4 +1,4 @@
-﻿using Ujoy19.Common;
+﻿using Common;
 using UnityEngine;
 
 namespace Common

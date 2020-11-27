@@ -34,5 +34,15 @@ namespace Common
                 GoMap = null;
             }
         }
+
+        public T Get<T>(string refKey)
+        {
+            if (!GoMap.TryGetValue(refKey, out var go))
+            {
+                return default(T);
+            }
+
+            return go.GetComponent<T>();
+        }
     }
 }

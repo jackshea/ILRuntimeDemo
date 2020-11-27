@@ -1,4 +1,4 @@
-﻿namespace Ujoy19.Common
+﻿namespace Common
 {
     public class UIContext
     {

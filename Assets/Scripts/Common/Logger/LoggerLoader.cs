@@ -3,7 +3,7 @@ using System.IO;
 using NLog;
 using NLog.LayoutRenderers;
 using NLog.Targets;
-using Ujoy19.Common;
+using Common;
 using UnityEngine;
 
 namespace Logger

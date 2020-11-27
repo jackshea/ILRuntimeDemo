@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Ujoy19.Common
+namespace Common
 {
     public class AssetLoader
     {

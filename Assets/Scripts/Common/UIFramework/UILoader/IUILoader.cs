@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Ujoy19.Common
+namespace Common
 {
     public interface IUILoader
     {

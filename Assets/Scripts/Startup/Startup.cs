@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Logger;
-using Ujoy19.Common;
+using Common;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// 负责检查更新资源
 public class Startup : MonoBehaviour
@@ -21,6 +22,7 @@ public class Startup : MonoBehaviour
         await uiLoader.Init();
         UIContext.Instance.SetUILoader(uiLoader);
         SceneManager.LoadSceneAsync("UI");
+        GetComponent<Text>();
     }
 
     void OnDestroy()
